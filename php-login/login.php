@@ -30,7 +30,7 @@
   <head>
     <meta charset="utf-8">
     <title>Login Form Design One | Fazt</title>
-    <link rel="stylesheet" href="css2/main3.css">
+    <link rel="stylesheet" href="css/main1.css">
   </head>
   <body>
 

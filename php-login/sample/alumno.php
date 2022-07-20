@@ -47,11 +47,11 @@
     <div class="navbar-collapse" id="navbar-collapse">
       <div class="site-header hidden-xs">
           <a class="site-brand" href="./index.html" title="">
-            <img class="img-responsive site-logo" alt="" src="./assets/images/mashup-logo.svg">
-            Mashup Template
+          <img class="img-responsive site-logo" alt="" src="./assets/images/mashup-logo.svg">
+            La cocina donde cabemos todos.
           </a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor.</p>
+        <p> Un mundo de sabores a un clic de distancia. Calidad y amor en cada cucharada.</p>
+        
       </div>
       <ul class="nav">
       <li><a href="./index.html" title="">Nuestras recetas</a></li>
@@ -71,8 +71,8 @@
           <a class="fa-icon" href="https://twitter.com/" title="">
             <i class="fa fa-twitter"></i>
           </a>
-        </p>
-        <p>© Untitled | Website created with <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
+          <p>© Final | Web Development 
+          2022 </a>
       </nav>  
     </div> 
   </nav>
@@ -88,25 +88,27 @@
                                 <form action="insertar.php" method="POST">
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control mb-3" name="cod_usuario" placeholder="cod_usuario">
+                  
+                                    <input id="cod_usuario" class="form-control mb-3" name="cod_usuario" placeholder="mail" title="Es obligatorio que ingreses tu mail" required>
                                     </div>
                                     <div class="form-group">
-                                    <input type="text" class="form-control mb-3" name="nombre" placeholder="nombre">
+                                    <input id="nombre" class="form-control mb-3" name="nombre" placeholder="nombre de la receta" title="Es obligatorio que ingreses el nombre de la receta" required>
                                     </div>
                                     <div class="form-group">
-                                    <input type="text" class="form-control mb-3" name="ingredientes" placeholder="ingredientes">
+                                    <input id="ingredientes" class="form-control mb-3" name="ingredientes" placeholder="ingredientes" title="Es obligatorio que ingreses los ingredientes" required>
                                     </div>
                                     <div class="form-group">
-                                    <input type="text" class="form-control mb-3" name="instrucciones" placeholder="instrucciones">
+                                    <input id="instrucciones" class="form-control mb-3" name="instrucciones" placeholder="instrucciones" title="Es obligatorio que ingreses las instrucciones" required>
                                     </div>
               <button type="submit" class="btn btn-primary btn-lg">Send</button>
+              
             </div>
 
             <div class="col-md-8">
                             <table class="table" >
                                 <thead class="table-success table-striped" >
                                     <tr>
-                                        <th>username</th>
+                                        <th>mail</th>
                                         <th>nombre</th>
                                         <th>ingredientes</th>
                                         <th>instrucciones</th>
@@ -125,7 +127,7 @@
                                                 <th><?php  echo $row['ingredientes']?></th>
                                                 <th><?php  echo $row['instrucciones']?></th>    
                                                 <th><a href="actualizar.php?id=<?php echo $row['cod_usuario'] ?>" class="btn btn-info">Editar</a></th>
-                                                <th><a href="delete.php?id=<?php echo $row['cod_usuario'] ?>" class="btn btn-danger">Eliminar</a></th>                                        
+                                                <th><a href="procesar_eliminar.php?id=<?php echo $row['cod_usuario'];?> "class="table__item__link">Eliminar</a></th>                                        
                                             </tr>
                                         <?php 
                                             }
@@ -135,6 +137,7 @@
                         </div>
                     </div>  
             </div>
+            <script src="confirmacion.js"></script>
     </body>
 </html>
 

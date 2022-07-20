@@ -4,15 +4,14 @@
 
   $message = '';
 
-  if (!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['username']) && !empty($_POST['confirm_password'])) {
-    $sql = "INSERT INTO users (email, password, username, confirm_password) VALUES (:email, :password, :username, :confirm_password)";
+  if (!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['username']) && !empty($_POST['age'])) {
+    $sql = "INSERT INTO users (email, password, username, age) VALUES (:email, :password, :username, :age)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':email', $_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
     $stmt->bindParam(':password', $password);
     $stmt->bindParam(':username', $_POST['username']);
-    $password = password_hash($_POST['confirm_password'], PASSWORD_BCRYPT);
-    $stmt->bindParam(':confirm_password', $password);
+    $stmt->bindParam(':age', $_POST['age']);
 
     if ($stmt->execute()) {
       $message = 'Successfully created new user';
@@ -20,13 +19,14 @@
       $message = 'Sorry there must have been an issue creating your account';
     }
   }
+  
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Login Form Design One | Fazt</title>
-    <link rel="stylesheet" href="css3/main3.css">
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
 
@@ -40,15 +40,14 @@
 
     <form action="signup.php" method="POST">
       <input name="username" type="text" placeholder="Enter your username">
+      <input name="age" type="text" placeholder="Enter your age">
       <input name="email" type="text" placeholder="Enter your email">
       <input name="password" type="password" placeholder="Enter your Password">
-      <input name="confirm_password" type="password" placeholder="Confirm your Password">
-      
-
-      <input type="submit" value="Submit">
-
+     
+      <input type="submit" value="SignUp">
+     
       <a href="login.php">Already have an account?</a>
-    
+      
     </form>
 
   </body>

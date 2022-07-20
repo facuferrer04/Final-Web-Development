@@ -16,4 +16,5 @@ if($query){
     
 }else {
 }
+include ("validar.php");
 ?>

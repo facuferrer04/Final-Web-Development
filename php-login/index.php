@@ -5,6 +5,12 @@
 
   require 'database.php';
 
+  if(isset($_POST['submit'])) {
+  $username = $_POST['username'];
+  $age = $_POST['age'];
+  $email = $_POST['email'];
+}
+
   if (isset($_SESSION['user_id'])) {
     $records = $conn->prepare('SELECT id, email, username, password FROM users WHERE id = :id');
     $records->bindParam(':id', $_SESSION['user_id']);
